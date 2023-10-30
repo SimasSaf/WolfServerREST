@@ -1,0 +1,19 @@
+﻿{
+	"runtime": "Net70",
+	"documentGenerator": {
+		"fromDocument": {
+			"url": "http://localhost:5000/swagger/v1/swagger.json",
+			"output": null
+		}
+	},
+
+	"codeGenerators": {
+		"openApiToCSharpClient": {
+			"classname" : "WolfClient",
+			"namespace" : "Services",
+			"output" : "WolfClient.cs",
+
+			"generateSyncMethods": true
+		}
+	}
+}
