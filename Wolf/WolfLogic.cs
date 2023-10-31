@@ -40,6 +40,9 @@ public class WolfState
 class WolfLogic
 {
     static readonly int WOLF_MAX_WEIGHT = 30;
+
+    static readonly int EAT_IF_LESS_DISTANCE = 30;
+
     static bool WOLF_IS_FULL = false;
     private Thread backgroundTaskThread;
 
@@ -100,6 +103,7 @@ class WolfLogic
         }
     }
 
+    //Check if rabbit is alive
     public bool IsRabbitAlive(RabbitDesc rabbit)
     {
         lock(wolfState.AccessLock)
@@ -164,7 +168,7 @@ class WolfLogic
                 var rabbit = wolfState.RabbitsNearby[i];
                 mLog.Info("Rabbit distance: " + rabbit.DistanceToWolf);
 
-                if (rabbit.DistanceToWolf <= 30)
+                if (rabbit.DistanceToWolf <= EAT_IF_LESS_DISTANCE)
                 {
                     mLog.Info("Rabbit distance: " + rabbit.DistanceToWolf);
 

@@ -2,6 +2,8 @@ namespace Servers;
 
 using Microsoft.AspNetCore.Mvc;
 
+// Endpoints for connecting to the REST API of the server
+
 [Route("/wolf")][ApiController]
 public class WolfController : ControllerBase
 {
