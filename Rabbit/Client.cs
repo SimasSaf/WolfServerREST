@@ -41,6 +41,8 @@ class Client
                     InitializeRabbit(wolf);
                 }
 
+                //If rabbit is nearby, make a random distande, update at wolf end
+                //otherwise rabbit is dead, restart
                 while(true)
                 {
                     mLog.Info(wolf.IsRabbitAlive(rabbit));
@@ -71,6 +73,7 @@ class Client
 		self.Run();
 	}
 
+    //Set preliminary values of rabbit, send rabbit to wolf server
     private void InitializeRabbit(WolfClient wolf)
     {
         var personGenerator = new PersonNameGenerator();

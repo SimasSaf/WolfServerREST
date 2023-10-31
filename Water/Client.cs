@@ -43,6 +43,8 @@ class Client
 
                 while(true)
                 {
+                    //checks if water has not been drunk at the wolf end
+                    //if it has, sleep and spawn again
                     while(wolf.IsWaterAlive(water))
                     {
                         mLog.Info("~~~~~~~~~~~~~~~~~");
@@ -70,6 +72,7 @@ class Client
 		self.Run();
 	}
 
+    //Sets water volume, coordinates and then sends to wolf server
     private void InitializeWater(WolfClient wolf)
     {
         water.Volume = rng.Next(0, 10);
